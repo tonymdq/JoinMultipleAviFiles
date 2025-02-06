@@ -42,12 +42,12 @@ def cleanup(mp4_files, temp_files):
     print("Cleanup succesful.")
 
 input("This code will combine all avi files in name order in the selected directory into one mp4 file. Output will overwrite the file if it already exists!!")
-toWrite = []
-directory = input("Insert sources directory: ") #"/home/tony/Downloads/a9-v720-master/live/"
+directory = input("Insert sources directory: ")
 print("Batch size will depend on the amunt of total videos to combine and available resources. It is the amount of files being processed at the same time")
 batch_size = int(input("Insert batch size: "))
 output_file_name = input("Insert output file name (without extension): ")
 file_list = [file_name for file_name in listdir(directory) if ".avi" in file_name]  # List AVI files in directory
+toWrite = []
 
 for file in file_list:      #   Convert all files to mp4 and store new names in toWrite
     aviFilePath = directory + file
